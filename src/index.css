@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		@apply scroll-smooth;
+	}
+}
+@layer components {
+	.text-title {
+		@apply text-4xl;
+	}
+	.dark-gold {
+		color: #8e793e;
+	}
+	.light-gold {
+		color: #ad974f;
+	}
+	.intellectual-grey {
+		color: #231f20;
+	}
+	.light-grey {
+		color: #eaeaea;
+	}
+}

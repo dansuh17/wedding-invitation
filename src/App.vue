@@ -1,6 +1,15 @@
 <template>
 	<div class="bg-zinc-800">
 		<div class="flex flex-col w-[500px] items-center justify-center mx-auto">
+			<Teleport to="body">
+				<PopupGallery
+					v-if="popupEnabled"
+					:imgs="imgs"
+					:selectedImg="selectedImg"
+					@toggle-popup="popupEnabled = false"
+					@change-selected="changeSelected"
+				/>
+			</Teleport>
 			<top-page id="topPage" />
 			<nav-bar id="navBar" />
 			<invitation-letter id="invitationLetter" />
@@ -11,15 +20,6 @@
 				:imgs="imgs"
 				@img-popup="imgPopup"
 			/>
-			<Teleport to="body">
-				<PopupGallery
-					v-if="popupEnabled"
-					:imgs="imgs"
-					:selectedImg="selectedImg"
-					@toggle-popup="popupEnabled = false"
-					@change-selected="changeSelected"
-				/>
-			</Teleport>
 			<give-love id="giveLove" />
 			<bus-information id="busInfo" />
 		</div>

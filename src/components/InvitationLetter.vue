@@ -4,7 +4,7 @@
 		<div v-for="msg in msgs" :key="msg">
 			{{ msg }}
 		</div>
-		<div>
+		<div class="flex flex-col text-right text-">
 			<div id="jisuFamily">
 				<span class="inline text-lg">{{ jisuParents }}</span> 의 장남
 				<span class="inline text-lg">지수</span>

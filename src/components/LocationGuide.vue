@@ -37,9 +37,9 @@ export default {
 				naver: "https://naver.me/xC61fokj",
 			},
 			logoImagePaths: {
-				google: require("../assets/googlemap-logo.jpeg"),
-				kakao: require("../assets/kakaomap-logo.jpeg"),
-				naver: require("../assets/navermap-logo.png"),
+				google: require("../assets/logos/googlemap-logo.jpeg"),
+				kakao: require("../assets/logos/kakaomap-logo.jpeg"),
+				naver: require("../assets/logos/navermap-logo.png"),
 			},
 		};
 	},

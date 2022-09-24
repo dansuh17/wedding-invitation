@@ -6,7 +6,7 @@
 				v-for="(img, i) in imgs"
 				:key="img"
 				:src="img"
-				class="rounded-xl cursor-pointer"
+				class="rounded-xl cursor-pointer object-cover h-48 w-96 bg-white"
 				@click="togglePopup(i)"
 			/>
 		</div>

@@ -1,6 +1,7 @@
 <template>
 	<div class="bg-green-400 w-full flex flex-col items-center justify-center">
 		<div class="text-title">날짜</div>
+		<div class="text-3xl my-4">11월</div>
 		<div class="grid grid-cols-7 gap-x-10 mx-auto text-center">
 			<div
 				v-for="(d, i) in days"

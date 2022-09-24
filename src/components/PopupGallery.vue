@@ -1,23 +1,39 @@
 <template>
 	<Transition name="modal">
-		<div v-if="show" class="modal-mask bg-blue-100/50">
+		<div class="modal-mask bg-blue-100/50">
 			<button class="button rounded-xl w-12 h-12" @click="togglePopup">
 				X
 			</button>
+			<div class="flex justify-center">
+				<img
+					class="p-2 w-16 h-16 cursor-pointer"
+					@click="changeSelected(-1)"
+					:src="require('../assets/logos/arrow.png')"
+				/>
+				<img :src="imgs[selectedImg]" class="h-96 w-96 object-contain" />
+				<img
+					class="p-2 w-16 h-16 cursor-pointer rotate-180"
+					@click="changeSelected(1)"
+					:src="require('../assets/logos/arrow.png')"
+				/>
+			</div>
 		</div>
 	</Transition>
 </template>
 
 <script>
 export default {
-	emits: ["togglePopup"],
-	props: ["imgs", "selectedImg", "show"],
+	emits: ["togglePopup", "changeSelected"],
+	props: ["imgs", "selectedImg"],
 	data() {
 		return {
 			localSelectedImg: this.selectedImg,
 		};
 	},
 	methods: {
+		changeSelected(i) {
+			this.$emit("changeSelected", i);
+		},
 		togglePopup() {
 			this.$emit("togglePopup");
 		},
@@ -35,7 +51,7 @@ export default {
 	background-color: rgba(0, 0, 0, 0.5);
 	display: table;
 	transition: opacity 0.3s ease;
-  @apply w-full
+	@apply w-full;
 }
 
 .modal-wrapper {

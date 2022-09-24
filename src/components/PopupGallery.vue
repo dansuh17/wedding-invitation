@@ -1,21 +1,33 @@
 <template>
 	<Transition name="modal">
-		<div class="modal-mask bg-blue-100/50">
-			<button class="button rounded-xl w-12 h-12" @click="togglePopup">
-				X
-			</button>
-			<div class="flex justify-center">
-				<img
-					class="p-2 w-16 h-16 cursor-pointer"
-					@click="changeSelected(-1)"
-					:src="require('../assets/logos/arrow.png')"
-				/>
-				<img :src="imgs[selectedImg]" class="h-96 w-96 object-contain" />
-				<img
-					class="p-2 w-16 h-16 cursor-pointer rotate-180"
-					@click="changeSelected(1)"
-					:src="require('../assets/logos/arrow.png')"
-				/>
+		<div class="z-[1] fixed top-0 w-full h-full flex flex-col items-center">
+			<div
+				class="bg-white/90 w-[500px] items-center justify-center h-full flex-col flex"
+			>
+				<div class="h-1/3 w-screen" @click="togglePopup" id="top-section"></div>
+				<div class="w-screen" id="mid-section">
+					<div class="flex justify-center items-center" id="img-slide">
+						<img
+							class="p-2 w-16 h-16 cursor-pointer"
+							@click="changeSelected(-1)"
+							:src="require('../assets/logos/arrow.png')"
+						/>
+						<img
+							:src="imgs[selectedImg]"
+							class="h-96 w-96 object-contain bg-white"
+						/>
+						<img
+							class="p-2 w-16 h-16 cursor-pointer rotate-180"
+							@click="changeSelected(1)"
+							:src="require('../assets/logos/arrow.png')"
+						/>
+					</div>
+				</div>
+				<div
+					class="h-1/3 w-screen"
+					@click="togglePopup"
+					id="bottom-section"
+				></div>
 			</div>
 		</div>
 	</Transition>
@@ -42,18 +54,6 @@ export default {
 </script>
 
 <style>
-.modal-mask {
-	position: fixed;
-	z-index: 9998;
-	top: 0;
-	left: 0;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
-	display: table;
-	transition: opacity 0.3s ease;
-	@apply w-full;
-}
-
 .modal-wrapper {
 	display: table-cell;
 	vertical-align: middle;

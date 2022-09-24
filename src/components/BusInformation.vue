@@ -4,7 +4,14 @@
 		<div v-for="msg in msgs" :key="msg">
 			{{ msg }}
 		</div>
-		<div class="bg-red-200 w-96 h-32 m-2 p-1 rounded-lg">버스 대절 관련 메시지</div>
+		<div class="bg-red-200 w-96 h-32 m-2 p-1 rounded-lg text-center">
+			{{ info }}
+			<div>
+				<p class="text-lg">연락처</p>
+				<p>초원관광대표 강봉수: 010-3642-3836</p>
+				<p>혼주쪽 연락처: 010-2458-1338</p>
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -28,6 +35,7 @@ export default {
 			},
 			location: "연향동 여성회관 건너편",
 			altPhoneNumber: "010 2458 1338",
+			info: "11월 12일 연향동 여성회관 건너편 6시출발",
 		};
 	},
 };

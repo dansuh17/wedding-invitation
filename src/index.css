@@ -9,7 +9,7 @@
 }
 @layer components {
 	.text-title {
-		@apply text-4xl;
+		@apply text-2xl;
 	}
 	.dark-gold {
 		color: #8e793e;
@@ -23,4 +23,36 @@
 	.light-grey {
 		color: #eaeaea;
 	}
+}
+/* 
+@font-face {
+  font-family: "marry";
+  src: url("../SunBatang-Light.woff");
+  src: url("../tkfkdg");
+} */
+
+/* @font-face {
+	font-family: 'marry';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/ChosunCentennial.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+} */
+/* @font-face {
+	font-family: 'marry';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+} */
+
+/* @font-face {
+	font-family: 'InfinitySans-RegularA1';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+} */
+@font-face {
+	font-family: 'marry';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
 }

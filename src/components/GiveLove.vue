@@ -1,19 +1,47 @@
 <template>
-	<div class="flex flex-col justify-center items-center bg-slate-300 w-full">
-		<div class="text-title">{{ title }}</div>
-		<div v-for="line in msg" :key="line">
+	<div class="flex flex-col justify-center items-center bg-set1-0 w-full py-16">
+		<div class="text-title mb-8">{{ title }}</div>
+		<div v-for="line in msg" :key="line" class="mb-1">
 			{{ line }}
 		</div>
-		<div class="flex items-center">
-			<button class="bank-button bg-red-500 text-white" @click="toggle('js')">
-				신랑 측 계좌번호
+		<div class="flex items-center mt-5">
+			<button
+				class="w-auto h-auto m-4 rounded-lg bg-set1-1 p-3"
+				@click="toggle('js')"
+			>
+				신랑 측
 			</button>
-			<button class="bank-button bg-blue-500 text-white" @click="toggle('gc')">
-				신부 측 계좌번호
+			<button
+				class="w-auto h-auto m-4 rounded-lg bg-set1-2 text-set1-0 p-3"
+				@click="toggle('gc')"
+			>
+				신부 측
 			</button>
 		</div>
-		<div v-if="selected" class="account-card">
-			{{ bankAccounts[selected] }}
+		<div v-if="selected" class="w-full items-center flex flex-col">
+			<div
+				class="p-4 w-10/12 h-auto rounded-lg justify-start mb-4"
+				:class="{
+					'bg-set1-1': selected === 'js',
+					'bg-set1-2 text-set1-0': selected === 'gc',
+				}"
+				v-for="desc in bankAccounts[selected]"
+				:key="'bank' + desc.name"
+			>
+				<!-- upper bar -->
+				<div>
+					{{ desc.name }}
+				</div>
+				<!-- lower bar -->
+				<div class="flex pt-2">
+					<div class="pr-4">
+						{{ desc.bank }}
+					</div>
+					<div>
+						{{ desc.acc }}
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </template>
@@ -33,8 +61,23 @@ export default {
 
 감사합니다.`.split("\n"),
 			bankAccounts: {
-				gc: "기업은행 088-156667-01-011 (장금채)",
-				js: "신한은행 110-491-225579 (전지수)",
+				gc: [
+					{
+						name: "장금채",
+						acc: "088-156667-01-011",
+						title: "신부",
+						bank: "기업",
+					},
+				],
+				js: [
+					{
+						name: "전지수",
+						acc: "110-491-225579",
+						title: "신랑",
+						bank: "신한",
+					},
+					{ name: "정연우", acc: "110-491-225579", title: "모", bank: "신한" },
+				],
 			},
 			selected: null,
 		};
@@ -50,12 +93,3 @@ export default {
 	},
 };
 </script>
-
-<style>
-.bank-button {
-	@apply w-auto h-auto m-4 p-2 rounded-lg;
-}
-.account-card {
-	@apply w-auto h-auto m-4 p-4 bg-white text-black rounded-lg;
-}
-</style>

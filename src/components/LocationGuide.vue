@@ -1,9 +1,11 @@
 <template>
-	<div class="bg-yellow-200 flex flex-col justify-center items-center w-full">
-		<div class="text-title font-serif">{{ title }}</div>
-		<div class="text-2xl">{{ primaryLocation }}</div>
-		<div class="text-xl">({{ secondaryLocation }})</div>
-		<div class="flex gap-4">
+	<div
+		class="bg-set1-0/80 flex flex-col justify-center items-center w-full py-16"
+	>
+		<div class="text-title">{{ title }}</div>
+		<div class="text-lg mt-8">{{ primaryLocation }}</div>
+		<div class="text-base mt-1 mb-2 text-set1-30">{{ hallName }}</div>
+		<div class="flex gap-4 mt-4">
 			<img
 				v-for="(imgPath, key) in logoImagePaths"
 				:key="key"
@@ -24,31 +26,17 @@
 	</div>
 </template>
 
-<script>
-export default {
-	data() {
-		return {
-			title: "오시는 길",
-			primaryLocation: "더컨벤션 잠실점 3층 아모르홀",
-			secondaryLocation: "서울 송파구 올림픽로 319",
-			locationUrls: {
-				google: "https://goo.gl/maps/GXYdYdEBchGnv8tS6",
-				kakao: "http://kko.to/ekInjfWIb",
-				naver: "https://naver.me/xC61fokj",
-			},
-			logoImagePaths: {
-				google: require("../assets/logos/googlemap-logo.jpeg"),
-				kakao: require("../assets/logos/kakaomap-logo.jpeg"),
-				naver: require("../assets/logos/navermap-logo.png"),
-			},
-		};
-	},
-	methods: {
-		redirectToNewTab(mapType) {
-			window.open(this.locationUrls[mapType], "_blank");
-		},
-	},
+<script setup>
+import { useLocationStore } from "@/store/global";
+
+const { logoImagePaths, redirectToNewTab } = useLocationStore();
+
+const texts = {
+	title: "오시는 길",
+	primaryLocation: "더컨벤션 잠실점",
+	hallName: "3층 아모르홀",
 };
+const { title, primaryLocation, hallName } = texts;
 </script>
 
 <style></style>

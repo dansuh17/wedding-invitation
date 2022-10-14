@@ -1,14 +1,25 @@
 <template>
-	<div class="bg-green-400 w-full flex flex-col items-center justify-center">
+	<div
+		class="bg-set1-0/80 w-full flex flex-col items-center justify-center py-16"
+	>
+		<!-- Text -->
+		<div class="flex flex-col text-center">
+			<!-- Title -->
+			<div class="text-title text-set1-3 mb-8">
+				{{ title }}
+			</div>
+			<div v-for="t in body" :key="'invitation-body-' + t" class="mb-1">
+				{{ t }}
+			</div>
+		</div>
+		<!-- Calendar -->
 		<div class="flex items-center justify-between pt-12 overflow-x-auto">
 			<table class="w-full">
 				<thead>
-					<tr>
-						<th v-for="d in days" :key="'textD' + d">
+					<tr class="border-b border-set1-3">
+						<th class="px-4 py-3" v-for="d in days" :key="'textD' + d">
 							<div class="w-full flex justify-center">
-								<p
-									class="text-base font-medium text-center text-gray-800 dark:text-gray-100"
-								>
+								<p class="text-base font-medium text-center">
 									{{ d }}
 								</p>
 							</div>
@@ -16,270 +27,17 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td class="pt-6">
-							<div
-								class="px-2 py-2 cursor-pointer flex w-full justify-center"
-							></div>
-						</td>
-						<td class="pt-6">
-							<div
-								class="px-2 py-2 cursor-pointer flex w-full justify-center"
-							></div>
-						</td>
-						<td>
-							<div
-								class="px-2 py-2 cursor-pointer flex w-full justify-center"
-							></div>
-						</td>
-						<td class="pt-6">
-							<div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+					<tr v-for="row in numRows" :key="'row' + row">
+						<td class="px-4 py-3" v-for="col in 7" :key="'col' + col">
+							<div class="cursor-pointer flex w-full justify-center">
 								<p
-									class="text-base text-gray-500 dark:text-gray-100 font-medium"
+									class="text-base font-medium"
+									:class="{
+										'text-base w-8 h-8 flex items-center justify-center font-medium text-white bg-set1-2  rounded-full':
+											getDay(row, col) === theDay,
+									}"
 								>
-									1
-								</p>
-							</div>
-						</td>
-						<td class="pt-6">
-							<div class="px-2 py-2 cursor-pointer flex w-full justify-center">
-								<p
-									class="text-base text-gray-500 dark:text-gray-100 font-medium"
-								>
-									2
-								</p>
-							</div>
-						</td>
-						<td class="pt-6">
-							<div class="px-2 py-2 cursor-pointer flex w-full justify-center">
-								<p class="text-base text-gray-500 dark:text-gray-100">3</p>
-							</div>
-						</td>
-						<td class="pt-6">
-							<div class="px-2 py-2 cursor-pointer flex w-full justify-center">
-								<p class="text-base text-gray-500 dark:text-gray-100">4</p>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<div class="px-2 py-2 cursor-pointer flex w-full justify-center">
-								<p
-									class="text-base text-gray-500 dark:text-gray-100 font-medium"
-								>
-									5
-								</p>
-							</div>
-						</td>
-						<td>
-							<div class="px-2 py-2 cursor-pointer flex w-full justify-center">
-								<p
-									class="text-base text-gray-500 dark:text-gray-100 font-medium"
-								>
-									6
-								</p>
-							</div>
-						</td>
-						<td>
-							<div class="px-2 py-2 cursor-pointer flex w-full justify-center">
-								<p
-									class="text-base text-gray-500 dark:text-gray-100 font-medium"
-								>
-									7
-								</p>
-							</div>
-						</td>
-						<td>
-							<div class="w-full h-full">
-								<div
-									class="flex items-center justify-center w-full rounded-full cursor-pointer"
-								>
-									<a
-										role="link"
-										tabindex="0"
-										class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:bg-indigo-500 hover:bg-indigo-500 text-base w-8 h-8 flex items-center justify-center font-medium text-white bg-indigo-700 rounded-full"
-										>8</a
-									>
-								</div>
-							</div>
-						</td>
-						<td>
-							<div class="px-2 py-2 cursor-pointer flex w-full justify-center">
-								<p
-									class="text-base text-gray-500 dark:text-gray-100 font-medium"
-								>
-									9
-								</p>
-							</div>
-						</td>
-						<td>
-							<div class="px-2 py-2 cursor-pointer flex w-full justify-center">
-								<p class="text-base text-gray-500 dark:text-gray-100">10</p>
-							</div>
-						</td>
-						<td>
-							<div class="px-2 py-2 cursor-pointer flex w-full justify-center">
-								<p class="text-base text-gray-500 dark:text-gray-100">11</p>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<div class="px-2 py-2 cursor-pointer flex w-full justify-center">
-								<p
-									class="text-base text-gray-500 dark:text-gray-100 font-medium"
-								>
-									12
-								</p>
-							</div>
-						</td>
-						<td>
-							<div class="px-2 py-2 cursor-pointer flex w-full justify-center">
-								<p
-									class="text-base text-gray-500 dark:text-gray-100 font-medium"
-								>
-									13
-								</p>
-							</div>
-						</td>
-						<td>
-							<div class="px-2 py-2 cursor-pointer flex w-full justify-center">
-								<p
-									class="text-base text-gray-500 dark:text-gray-100 font-medium"
-								>
-									14
-								</p>
-							</div>
-						</td>
-						<td>
-							<div class="px-2 py-2 cursor-pointer flex w-full justify-center">
-								<p
-									class="text-base text-gray-500 dark:text-gray-100 font-medium"
-								>
-									15
-								</p>
-							</div>
-						</td>
-						<td>
-							<div class="px-2 py-2 cursor-pointer flex w-full justify-center">
-								<p
-									class="text-base text-gray-500 dark:text-gray-100 font-medium"
-								>
-									16
-								</p>
-							</div>
-						</td>
-						<td>
-							<div class="px-2 py-2 cursor-pointer flex w-full justify-center">
-								<p class="text-base text-gray-500 dark:text-gray-100">17</p>
-							</div>
-						</td>
-						<td>
-							<div class="px-2 py-2 cursor-pointer flex w-full justify-center">
-								<p class="text-base text-gray-500 dark:text-gray-100">18</p>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<div class="px-2 py-2 cursor-pointer flex w-full justify-center">
-								<p
-									class="text-base text-gray-500 dark:text-gray-100 font-medium"
-								>
-									19
-								</p>
-							</div>
-						</td>
-						<td>
-							<div class="px-2 py-2 cursor-pointer flex w-full justify-center">
-								<p
-									class="text-base text-gray-500 dark:text-gray-100 font-medium"
-								>
-									20
-								</p>
-							</div>
-						</td>
-						<td>
-							<div class="px-2 py-2 cursor-pointer flex w-full justify-center">
-								<p
-									class="text-base text-gray-500 dark:text-gray-100 font-medium"
-								>
-									21
-								</p>
-							</div>
-						</td>
-						<td>
-							<div class="px-2 py-2 cursor-pointer flex w-full justify-center">
-								<p
-									class="text-base text-gray-500 dark:text-gray-100 font-medium"
-								>
-									22
-								</p>
-							</div>
-						</td>
-						<td>
-							<div class="px-2 py-2 cursor-pointer flex w-full justify-center">
-								<p
-									class="text-base text-gray-500 dark:text-gray-100 font-medium"
-								>
-									23
-								</p>
-							</div>
-						</td>
-						<td>
-							<div class="px-2 py-2 cursor-pointer flex w-full justify-center">
-								<p class="text-base text-gray-500 dark:text-gray-100">24</p>
-							</div>
-						</td>
-						<td>
-							<div class="px-2 py-2 cursor-pointer flex w-full justify-center">
-								<p class="text-base text-gray-500 dark:text-gray-100">25</p>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<div class="px-2 py-2 cursor-pointer flex w-full justify-center">
-								<p
-									class="text-base text-gray-500 dark:text-gray-100 font-medium"
-								>
-									26
-								</p>
-							</div>
-						</td>
-						<td>
-							<div class="px-2 py-2 cursor-pointer flex w-full justify-center">
-								<p
-									class="text-base text-gray-500 dark:text-gray-100 font-medium"
-								>
-									27
-								</p>
-							</div>
-						</td>
-						<td>
-							<div class="px-2 py-2 cursor-pointer flex w-full justify-center">
-								<p
-									class="text-base text-gray-500 dark:text-gray-100 font-medium"
-								>
-									28
-								</p>
-							</div>
-						</td>
-						<td>
-							<div class="px-2 py-2 cursor-pointer flex w-full justify-center">
-								<p
-									class="text-base text-gray-500 dark:text-gray-100 font-medium"
-								>
-									29
-								</p>
-							</div>
-						</td>
-						<td>
-							<div class="px-2 py-2 cursor-pointer flex w-full justify-center">
-								<p
-									class="text-base text-gray-500 dark:text-gray-100 font-medium"
-								>
-									30
+									{{ getDay(row, col) }}
 								</p>
 							</div>
 						</td>
@@ -287,45 +45,41 @@
 				</tbody>
 			</table>
 		</div>
-		<div class="text-title">날짜</div>
-		<div class="text-3xl my-4">11월</div>
-		<div class="grid grid-cols-7 gap-x-10 mx-auto text-center">
-			<div
-				v-for="(d, i) in days"
-				class="mt-2 mb-3"
-				:key="d + i"
-				:class="[
-					{
-						' text-red-400': [0, 6].includes(i % 7),
-					},
-				]"
-			>
-				{{ d }}
-			</div>
-			<div
-				v-for="(day, i) in getDays()"
-				name="backgroundCircle"
-				class="rounded-full relative p-4"
-				:class="{
-					'text-blue-500 bg-white': day === theDay,
-					'text-red-500': [0, 6].includes(i % 7),
-				}"
-				:key="i"
-			>
-				<div
-					class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-				>
-					{{ day }}
-				</div>
-			</div>
-		</div>
 	</div>
 	<!-- calendar -->
 </template>
 
 <script>
 export default {
+	data() {
+		return {
+			days: ["일", "월", "화", "수", "목", "금", "토"],
+			offset: 2,
+			numDays: 30,
+			theDay: 12,
+			title: "날짜",
+			body: `
+11월 12일 토요일
+낮 12시 30분
+			`.split("\n"),
+		};
+	},
 	methods: {
+		getDay(row, col) {
+			row -= 1;
+			col -= 1;
+			return this.getDays[row * 7 + col];
+		},
+	},
+	computed: {
+		numRows() {
+			const numItems = this.offset + this.numDays;
+			let numRows = Math.floor(numItems / 7);
+			if (numItems % 7 !== 0) {
+				numRows++;
+			}
+			return numRows;
+		},
 		getDays() {
 			const days = [];
 			for (let i = 0; i < this.offset; i++) {
@@ -337,14 +91,6 @@ export default {
 
 			return days;
 		},
-	},
-	data() {
-		return {
-			days: ["일", "월", "화", "수", "목", "금", "토"],
-			offset: 2,
-			numDays: 30,
-			theDay: 12,
-		};
 	},
 };
 </script>

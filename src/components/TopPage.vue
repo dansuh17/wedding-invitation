@@ -1,23 +1,26 @@
 <template>
 	<!-- <img :src="mainPageUrl" alt="" /> -->
-
 	<div
-		class="flex flex-col w-full justify-center items-center bg-blue-100 border border-blue-600"
+		class="flex flex-col w-full justify-center items-center bg-set1-0 py-16"
+		id="top-page-bg"
 	>
-		<div class="border border-blue-600 w-full h-96">TopPage</div>
+		<div class="flex flex-col text-center text-xl">
+			지수 <br />
+			💍 <br />
+			금채
+		</div>
+
+		<div class="w-5/6 h-auto mt-8 mb-8">
+			<img :src="imgs.topView" class="rounded-md" />
+		</div>
 	</div>
 </template>
 
-<script>
-export default {
-	name: "TopPage",
-	data() {
-		return {
-			mainPageUrl:
-				"https://drive.google.com/uc?export=view&id=1g1nJ6uui3nmFWcaQbTBJdYk3b9TP3Gl9",
-		};
-	},
-};
+<script setup>
+import { useImgStore } from "@/store/global";
+
+const imgStore = useImgStore();
+const { imgs } = imgStore;
 </script>
 
 <style></style>

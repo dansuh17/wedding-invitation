@@ -1,20 +1,19 @@
 <template>
-	<div
-		class="flex flex-col justify-center bg-set1-0 items-center bg w-full py-16"
-	>
+	<div class="flex flex-col justify-center bg-set1-0 items-center w-full py-16">
+		<hr class="mb-8 border w-1/3 border-set1-3/60" />
 		<!-- title -->
-		<div class="text-title mb-8">{{ title }}</div>
+		<div class="text-title mb-12">{{ title }}</div>
 		<!-- greeting msg -->
 		<div class="flex flex-col justify-center items-center mb-6">
-			<div v-for="msg in msgs" :key="msg" class="text-sm mb-2">
+			<div v-for="msg in msgs" :key="msg" class="text-md mb-2">
 				{{ msg }}
 			</div>
 		</div>
 		<div class="w-5/6 h-auto mt-8 mb-8">
-			<img :src="imgs.invitationView" class="rounded-md" />
+			<img :src="imgs.invitationView" />
 		</div>
 		<!-- name & entitlements -->
-		<div class="flex flex-col text-right">
+		<div class="flex flex-col text-right text-lg">
 			<div id="jisuFamily">
 				<span class="inline text">{{ jisuParents }}</span>
 				<span class="inline text text-xs text-set1-3/80"> 의 장남</span>

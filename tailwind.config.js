@@ -20,6 +20,7 @@ module.exports = {
 					1: "#B4846C",
 					2: "#E5B299",
 					3: "#FCDEC0",
+					4: "#FFF8EA"
 				},
 			},
 		},

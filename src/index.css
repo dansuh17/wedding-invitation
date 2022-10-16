@@ -9,7 +9,7 @@
 }
 @layer components {
 	.text-title {
-		@apply text-2xl;
+		@apply text-2xl text-set1-3;
 	}
 	.dark-gold {
 		color: #8e793e;
@@ -24,6 +24,7 @@
 		color: #eaeaea;
 	}
 }
+
 /* 
 @font-face {
   font-family: "marry";
@@ -51,8 +52,9 @@
 	font-style: normal;
 } */
 @font-face {
-	font-family: 'marry';
-	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+	font-family: "marry";
+	src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+		format("woff");
 	font-weight: normal;
 	font-style: normal;
 }

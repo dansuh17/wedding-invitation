@@ -8,7 +8,7 @@ export const useImgStore = defineStore("globalStore", () => {
 		all: [],
 	};
 
-	for (let i = 1; i < 8; i++) {
+	for (let i = 1; i <= 13; i++) {
 		imgs.all.push(require(`@/assets/imgs/photos/${i}.jpeg`));
 	}
 
@@ -49,20 +49,23 @@ export const useImgStore = defineStore("globalStore", () => {
 		removePopup,
 		getSelectedImg,
 		popupEnabled,
+		selectedImg
 	};
 });
 
 export const useLocationStore = defineStore("locationStore", () => {
 	const logoImagePaths = {
-		google: require("../assets/logos/googlemap-logo.jpeg"),
-		kakao: require("../assets/logos/kakaomap-logo.jpeg"),
 		naver: require("../assets/logos/navermap-logo.png"),
+		tmap: require("../assets/logos/tmap-logo.svg"),
+		kakao: require("../assets/logos/kakaomap-logo.jpeg"),
+		google: require("../assets/logos/googlemap-logo.jpeg"),
 	};
 
 	const locationUrls = {
 		google: "https://goo.gl/maps/GXYdYdEBchGnv8tS6",
 		kakao: "http://kko.to/ekInjfWIb",
 		naver: "https://naver.me/xC61fokj",
+		tmap: "https://surl.tmap.co.kr/9de28c62",
 	};
 
 	const redirectToNewTab = (mapType) => {

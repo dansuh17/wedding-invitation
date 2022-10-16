@@ -1,49 +1,49 @@
 <template>
-	<div
-		class="bg-set1-0/80 w-full flex flex-col items-center justify-center py-16"
-	>
+	<div class="bg-set1-0 w-full flex flex-col items-center justify-center py-16">
 		<!-- Text -->
-		<div class="flex flex-col text-center">
-			<!-- Title -->
-			<div class="text-title text-set1-3 mb-8">
-				{{ title }}
+		<hr class="mb-8 border w-1/3 border-set1-3/60" />
+		<div class="w-max flex flex-col justify-center items-center">
+			<p class="text-title mb-12">11월</p>
+			<!-- <div class="relative">
+				<div class="absolute left-0">11월</div>
+				<div class="absolute right-0">토. 낮 1:30</div>
+			</div> -->
+			<!-- Calendar -->
+			<div class="relative w-full">
+				<p class="text-lg absolute right-2">낮 12시 반</p>
 			</div>
-			<div v-for="t in body" :key="'invitation-body-' + t" class="mb-1">
-				{{ t }}
+			<div class="flex items-center justify-between pt-12">
+				<table class="w-full">
+					<thead>
+						<tr class="border-b border-set1-3">
+							<th class="px-4 py-3" v-for="d in days" :key="'textD' + d">
+								<div class="w-full flex justify-center">
+									<p class="text-base font-medium text-center">
+										{{ d }}
+									</p>
+								</div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr v-for="row in numRows" :key="'row' + row">
+							<td class="px-4 py-3" v-for="col in 7" :key="'col' + col">
+								<div class="cursor-pointer flex w-full justify-center">
+									<p
+										class="text-base font-medium"
+										:class="{
+											'text-base w-8 h-8 flex items-center justify-center font-medium text-white bg-set1-2  rounded-full':
+												getDay(row, col) === theDay,
+										}"
+									>
+										{{ getDay(row, col) }}
+									</p>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
-		</div>
-		<!-- Calendar -->
-		<div class="flex items-center justify-between pt-12 overflow-x-auto">
-			<table class="w-full">
-				<thead>
-					<tr class="border-b border-set1-3">
-						<th class="px-4 py-3" v-for="d in days" :key="'textD' + d">
-							<div class="w-full flex justify-center">
-								<p class="text-base font-medium text-center">
-									{{ d }}
-								</p>
-							</div>
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr v-for="row in numRows" :key="'row' + row">
-						<td class="px-4 py-3" v-for="col in 7" :key="'col' + col">
-							<div class="cursor-pointer flex w-full justify-center">
-								<p
-									class="text-base font-medium"
-									:class="{
-										'text-base w-8 h-8 flex items-center justify-center font-medium text-white bg-set1-2  rounded-full':
-											getDay(row, col) === theDay,
-									}"
-								>
-									{{ getDay(row, col) }}
-								</p>
-							</div>
-						</td>
-					</tr>
-				</tbody>
-			</table>
 		</div>
 	</div>
 	<!-- calendar -->

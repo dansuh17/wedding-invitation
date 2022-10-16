@@ -1,24 +1,24 @@
 <template>
-	<div class="bg-zinc-800 font-maru text-set1-3">
-		<div class="flex flex-col w-screen items-center justify-center mx-auto">
-			<Teleport to="body">
-				<PopupGallery
-					@wheel.prevent
-					@touchmove.prevent
-					@scroll.prevent
-					v-if="popupEnabled"
-					:selectedImg="selectedImg"
-				/>
-			</Teleport>
-			<top-page id="topPage" />
-			<nav-bar id="navBar" />
-			<invitation-letter id="invitationLetter" />
-			<DateInformation id="dateInformation" />
-			<location-guide id="locationGuide" />
-			<gallary-component id="gallaryComponent" :imgs="imgs" />
-			<bus-information id="busInfo" />
-			<give-love id="giveLove" />
-		</div>
+	<div
+		class="bg-zinc-800 font-maru text-set1-4 flex flex-col max-w-screen-sm items-center justify-center mx-auto"
+	>
+		<Teleport to="body">
+			<PopupGallery
+				@wheel.prevent
+				@touchmove.prevent
+				@scroll.prevent
+				v-if="popupEnabled"
+				:selectedImg="selectedImg"
+			/>
+		</Teleport>
+		<top-page id="topPage" />
+		<nav-bar id="navBar" />
+		<invitation-letter id="invitationLetter" />
+		<DateInformation id="dateInformation" />
+		<location-guide id="locationGuide" />
+		<gallary-component id="gallaryComponent" :imgs="imgs" />
+		<!-- <bus-information id="busInfo" /> -->
+		<give-love id="giveLove" />
 	</div>
 </template>
 
@@ -29,7 +29,7 @@ import GallaryComponent from "./components/GallaryComponent.vue";
 import LocationGuide from "./components/LocationGuide.vue";
 import NavBar from "./components/NavBar.vue";
 import GiveLove from "./components/GiveLove.vue";
-import BusInformation from "./components/BusInformation.vue";
+// import BusInformation from "./components/BusInformation.vue";
 import DateInformation from "./components/DateInformation.vue";
 import PopupGallery from "./components/PopupGallery.vue";
 import { useImgStore } from "./store/global";

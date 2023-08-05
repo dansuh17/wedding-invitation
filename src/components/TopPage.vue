@@ -5,7 +5,7 @@
 		id="top-page-bg"
 	>
 		<!-- <div class="pb-4">💍</div> -->
-		<div class="flex flex-col text-center text-title mb-12">지수 💍 금채</div>
+		<div class="flex flex-col text-center text-title mb-12">동우 💍 연주</div>
 
 		<div class="w-2/3 h-auto mb-8">
 			<img :src="imgs.topView" />
@@ -22,15 +22,17 @@
 </template>
 
 <script setup>
+
 import { useImgStore } from "@/store/global";
 
 const imgStore = useImgStore();
 const { imgs } = imgStore;
 
 const msgs = `
-			2022년 11월 12일 토요일 낮 12시 30분
-			잠실 더컨벤션 3층 아모르홀
+			2023년 9월 9일 토요일 오전 11시 30분
+			휘닉스 제주 섭지코지 글라스하우스 (장소 공개?)
 `.split("\n");
+
 </script>
 
 <style></style>

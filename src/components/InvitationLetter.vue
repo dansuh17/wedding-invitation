@@ -14,32 +14,35 @@
 		</div>
 		<!-- name & entitlements -->
 		<div class="flex flex-col text-right text-lg">
-			<div id="jisuFamily">
-				<span class="inline text">{{ jisuParents }}</span>
-				<span class="inline text text-xs text-set1-3/80"> 의 장남</span>
-				<span class="inline text"> 지수</span>
+			<div id="dongwooFamily">
+				<span class="inline text">{{ dongwooParents }}</span>
+				<span class="inline text text-xs text-set1-3/80"> 의 아들</span>
+				<span class="inline text"> 동우</span>
 			</div>
-			<div id="geumchaeFamily">
-				<span class="inline text">{{ geumchaeParents }}</span>
-				<span class="inline text text-xs text-set1-3/80"> 의 장녀</span>
-				<span class="inline text"> 금채</span>
+			<div id="yeonjooFamily">
+				<span class="inline text">{{ yeonjooParents }}</span>
+				<span class="inline text text-xs text-set1-3/80"> 의 딸</span>
+				<span class="inline text"> 연주</span>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script setup>
+
 import { useImgStore } from "@/store/global";
 
 const imgStore = useImgStore();
 const { imgs } = imgStore;
-const title = "초대합니다";
+const title = "초대합니다???";
 const msgs = `
 오랜 기다림 속에서 저희 두 사람, 
 한마음 되어 참된 사랑의 
 결실을 맺게 되었습니다.
 오셔서 축복해 주시면 
 큰 기쁨이 되겠습니다.`.split("\n");
-const jisuParents = "전용출·정연우";
-const geumchaeParents = "(故)장행기·조찬숙";
+
+const dongwooParents = "서홍원·박서영";
+const yeonjooParents = "오연환·김영희";
+
 </script>

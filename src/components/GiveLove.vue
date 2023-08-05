@@ -10,7 +10,7 @@
 				<p>신랑측</p>
 				<button
 					class="w-auto h-auto m-4 rounded-xl bg-set1-1 p-3"
-					@click="toggle('js')"
+					@click="toggle('ds')"
 				>
 					계좌번호 보기
 				</button>
@@ -20,7 +20,7 @@
 				<p>신부측</p>
 				<button
 					class="w-auto h-auto m-4 rounded-xl bg-set1-2 text-set1-0 p-3"
-					@click="toggle('gc')"
+					@click="toggle('yj')"
 				>
 					계좌번호 보기
 				</button>
@@ -33,8 +33,8 @@
 			<div
 				class="p-4 w-10/12 h-auto rounded-lg mb-4 flex relative"
 				:class="{
-					'bg-set1-1': selected === 'js',
-					'bg-set1-2 text-set1-0': selected === 'gc',
+					'bg-set1-1': selected === 'ds',
+					'bg-set1-2 text-set1-0': selected === 'yj',
 				}"
 				v-for="desc in bankAccounts[selected]"
 				:key="'bank' + desc.name"
@@ -79,6 +79,7 @@ const title = "마음 전하실 곳";
 // 어려운 시기에 축복해 주셔서
 
 // 감사합니다.`.split("\n");
+
 const copyToClipboard = (acc) => {
 	const filtered = acc.replaceAll("-", "");
 	navigator.clipboard.writeText(filtered);
@@ -86,32 +87,44 @@ const copyToClipboard = (acc) => {
 };
 
 const bankAccounts = {
-	gc: [
+	yj: [
 		{
-			name: "장금채",
-			acc: "088-156667-01-011",
+			name: "오연주",
+			acc: "???",
 			title: "신부",
-			bank: "기업",
+			bank: "우리",
+		},
+		{
+			name: "오연환",
+			acc: "???",
+			title: "신부 부",
+			bank: "???",
+		},
+		{
+			name: "김영희",
+			acc: "???",
+			title: "신부 모",
+			bank: "???",
 		},
 	],
-	js: [
+	ds: [
 		{
-			name: "전지수",
-			acc: "110-491-225579",
+			name: "서동우",
+			acc: "110-454-619174",
 			title: "신랑",
 			bank: "신한",
 		},
 		{
-			name: "전용출",
-			acc: "1021-01-4441708",
+			name: "서홍원",
+			acc: "???",
 			title: "신랑 부",
-			bank: "농협",
+			bank: "???",
 		},
 		{
-			name: "정연우",
-			acc: "010-9001-8821-19",
+			name: "박서영",
+			acc: "???",
 			title: "신랑 모",
-			bank: "전북",
+			bank: "???",
 		},
 	],
 };

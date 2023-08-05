@@ -8,11 +8,11 @@
 			</div>
 			<div>{{ delimiter }}</div>
 			<div>
-				<a href="#locationGuide"> 오시는 길 </a>
+				<a href="#gallaryComponent"> 사진첩 </a>
 			</div>
 			<div>{{ delimiter }}</div>
 			<div>
-				<a href="#gallaryComponent"> 사진첩 </a>
+				<a href="#locationGuide"> 오시는 길 </a>
 			</div>
 		</div>
 	</nav>

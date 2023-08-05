@@ -3,14 +3,14 @@
 		<!-- Text -->
 		<hr class="mb-8 border w-1/3 border-set1-3/60" />
 		<div class="w-max flex flex-col justify-center items-center">
-			<p class="text-title mb-12">11월</p>
+			<p class="text-title mb-12">9월</p>
 			<!-- <div class="relative">
 				<div class="absolute left-0">11월</div>
 				<div class="absolute right-0">토. 낮 1:30</div>
 			</div> -->
 			<!-- Calendar -->
 			<div class="relative w-full">
-				<p class="text-lg absolute right-2">낮 12시 반</p>
+				<p class="text-lg absolute right-2">오전 11시 반</p>
 			</div>
 			<div class="flex items-center justify-between pt-12">
 				<table class="w-full">
@@ -50,17 +50,18 @@
 </template>
 
 <script>
+
 export default {
 	data() {
 		return {
 			days: ["일", "월", "화", "수", "목", "금", "토"],
-			offset: 2,
+			offset: 5,
 			numDays: 30,
-			theDay: 12,
+			theDay: 9,
 			title: "날짜",
 			body: `
-11월 12일 토요일
-낮 12시 30분
+9월 9일 토요일
+오전 11시 30분
 			`.split("\n"),
 		};
 	},
@@ -93,6 +94,7 @@ export default {
 		},
 	},
 };
+
 </script>
 
 <style></style>

@@ -15,21 +15,20 @@
 		<nav-bar id="navBar" />
 		<invitation-letter id="invitationLetter" />
 		<DateInformation id="dateInformation" />
-		<location-guide id="locationGuide" />
 		<gallary-component id="gallaryComponent" :imgs="imgs" />
-		<!-- <bus-information id="busInfo" /> -->
+		<location-guide id="locationGuide" />
 		<give-love id="giveLove" />
 	</div>
 </template>
 
 <script setup>
+
 import TopPage from "./components/TopPage.vue";
 import InvitationLetter from "./components/InvitationLetter.vue";
 import GallaryComponent from "./components/GallaryComponent.vue";
 import LocationGuide from "./components/LocationGuide.vue";
 import NavBar from "./components/NavBar.vue";
 import GiveLove from "./components/GiveLove.vue";
-// import BusInformation from "./components/BusInformation.vue";
 import DateInformation from "./components/DateInformation.vue";
 import PopupGallery from "./components/PopupGallery.vue";
 import { useImgStore } from "./store/global";
@@ -37,4 +36,5 @@ import { storeToRefs } from "pinia";
 
 const imgStore = useImgStore();
 const { popupEnabled } = storeToRefs(imgStore);
+
 </script>

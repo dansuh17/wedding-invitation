@@ -18,6 +18,8 @@ npm run serve
 npm run build
 ```
 
+This will create a `dist/` directory. To deploy to github pages, move `dist/` to `docs/` in the master branch.
+
 ### Lints and fixes files
 
 ```
@@ -26,3 +28,7 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Github Pages
+
+https://dansuh17.github.io/wedding-invitation/

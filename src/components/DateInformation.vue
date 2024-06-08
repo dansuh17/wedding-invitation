@@ -3,15 +3,15 @@
 		<!-- Text -->
 		<hr class="mb-8 border w-1/3 border-set1-3/60" />
 		<div class="w-max flex flex-col justify-center items-center">
-			<p class="text-title mb-12">9월</p>
+			<p class="text-title">9월</p>
 			<!-- <div class="relative">
 				<div class="absolute left-0">11월</div>
 				<div class="absolute right-0">토. 낮 1:30</div>
 			</div> -->
 			<!-- Calendar -->
-			<div class="relative w-full">
-				<p class="text-lg absolute right-2">오전 11시 반</p>
-			</div>
+			<!--<div class="relative w-full">
+				<p class="text-lg absolute right-2"></p>
+			</div>-->
 			<div class="flex items-center justify-between pt-12">
 				<table class="w-full">
 					<thead>
@@ -61,7 +61,6 @@ export default {
 			title: "날짜",
 			body: `
 9월 9일 토요일
-오전 11시 30분
 			`.split("\n"),
 		};
 	},

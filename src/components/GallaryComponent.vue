@@ -1,7 +1,7 @@
 <template>
-	<div class="flex flex-col justify-center items-center bg-set1-0 w-full py-16">
-		<hr class="mb-8 border w-1/3 border-set1-3/60" />
-		<div class="text-title mb-12">{{ title }}</div>
+	<div class="flex flex-col justify-center items-center bg-set1-6 w-full py-16">
+		<!-- <hr class="mb-8 border w-1/3 border-set1-3/60" /> -->
+		<div class="text-title mb-20 mt-5">{{ title }}</div>
 		<div class="grid grid-cols-3 gap-2 mx-2">
 			<img
 				v-for="(img, i) in imgs.all.slice(0, 9)"
@@ -12,8 +12,8 @@
 			/>
 		</div>
 		<div
-			class="bg-set1-1 w-full p-3 text-center mt-1 cursor-pointer"
-			@click="imgPopup(8)"
+			class="bg-set1-1 w-full p-3 text-center mt-1 cursor-pointer rounded-xl"
+			@click="imgPopup(9)"
 		>
 			더 보기
 		</div>
@@ -26,5 +26,5 @@ import "vueperslides/dist/vueperslides.css";
 
 const { imgs, imgPopup } = useImgStore();
 
-const title = "사진첩";
+const title = "G A L L E R Y";
 </script>

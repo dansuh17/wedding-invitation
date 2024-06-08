@@ -16,18 +16,22 @@ module.exports = {
 					3: "#141E27",
 				},
 				set1: {
-					0: "#7D5A50",
-					1: "#B4846C",
+					0: "#FFFFFF",
+					1: "#FBF6EE",
 					2: "#E5B299",
-					3: "#FCDEC0",
-					4: "#FFF8EA"
+					3: "#847358",
+					4: "#000000",
+					5: "#847358",
+					6: "#F8F8F8",
+					7: "#E2D1B6"
 				},
 			},
 		},
 		fontFamily: {
 			sans: ["NanumSquare"],
 			marry: ["marry"],
-			maru: ["MaruBuri"],
+			maru: ["MaruBuriLight"],
+			portologo: ["The Portologo"],
 		},
 	},
 	plugins: [],

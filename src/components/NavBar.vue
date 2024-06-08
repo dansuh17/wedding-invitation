@@ -4,7 +4,7 @@
 	>
 		<div class="flex justify-center gap-10 px-2">
 			<div>
-				<a href="#invitationLetter"> 초대합니다 </a>
+				<a href="#invitationLetter"> 결혼합니다 </a>
 			</div>
 			<div>{{ delimiter }}</div>
 			<div>

@@ -26,10 +26,10 @@
 import TopPage from "./components/TopPage.vue";
 import InvitationLetter from "./components/InvitationLetter.vue";
 import GallaryComponent from "./components/GallaryComponent.vue";
-import LocationGuide from "./components/LocationGuide.vue";
-import NavBar from "./components/NavBar.vue";
+/* import LocationGuide from "./components/LocationGuide.vue"; */
+/* import NavBar from "./components/NavBar.vue"; */
 import GiveLove from "./components/GiveLove.vue";
-import DateInformation from "./components/DateInformation.vue";
+/* import DateInformation from "./components/DateInformation.vue"; */
 import PopupGallery from "./components/PopupGallery.vue";
 import { useImgStore } from "./store/global";
 import { storeToRefs } from "pinia";

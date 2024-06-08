@@ -3,13 +3,13 @@ import { ref } from "vue";
 
 export const useImgStore = defineStore("globalStore", () => {
 	const imgs = {
-		topView: require("@/assets/imgs/photos/1.jpeg"),
-		invitationView: require("@/assets/imgs/photos/2.jpeg"),
+		topView: require("@/assets/imgs/photos/intro.png"),
+		invitationView: require("@/assets/imgs/photos/4_compressed.jpeg"),
 		all: [],
 	};
 
 	for (let i = 1; i <= 13; i++) {
-		imgs.all.push(require(`@/assets/imgs/photos/${i}.jpeg`));
+		imgs.all.push(require(`@/assets/imgs/photos/${i}_compressed.jpeg`));
 	}
 
 	// for (let i = 1; i++; i < 10) {
